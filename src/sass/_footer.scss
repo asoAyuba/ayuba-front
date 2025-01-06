@@ -1,0 +1,36 @@
+@import 'variables';
+@import 'mixins';
+
+footer {
+  width: 100%; // Asegura que ocupe todo el ancho disponible
+  background-color: $dark-color; // Fondo oscuro
+  color: $light-color; // Texto en blanco
+  padding: 1rem 2rem; // Espaciado interno
+  display: flex; // Utiliza flexbox para organizar el contenido
+  justify-content: flex-end; // Alinea todo el contenido a la derecha
+  align-items: center; // Centra los elementos verticalmente
+
+  .social-links {
+    display: flex; // Organiza el texto y enlaces en línea
+    gap: 1.5rem; // Espaciado entre los elementos
+    align-items: center; // Alinea verticalmente el texto y los enlaces
+
+    p {
+      font-family: $font-family-base; // Fuente base
+      font-size: 1rem; // Tamaño de letra
+      margin: 0; // Elimina márgenes para mantener el alineado
+    }
+
+    a {
+      font-family: $font-family-base; // Fuente base
+      font-size: 1rem; // Tamaño de letra
+      color: $light-color; // Texto blanco para los enlaces
+      text-decoration: none; // Sin subrayado
+      transition: color 0.3s ease; // Efecto de transición en el hover
+
+      &:hover {
+        color: $primary-color; // Cambia el color al pasar el ratón
+      }
+    }
+  }
+}

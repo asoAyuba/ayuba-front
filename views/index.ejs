@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="<%= locale %>">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="description" content="Protectora de gatos Ayuba, adopta un gato y dale un hogar.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title><%= __("title") %></title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <header>
+    <nav class="top-nav">
+      <div class="nav-container">
+        <!-- Botón Ayuba a la izquierda -->
+        <a href="#top" class="nav-logo">Ayuba</a>
+  
+        <!-- Lista de navegación a la derecha -->
+        <ul class="nav-links">
+          <li><a href="#about"><%= __("nav.about") %></a></li>
+          <li><a href="#nuestrosGatos"><%= __("nav.ourCats") %></a></li>
+          <li><a href="#gatos"><%= __("nav.cats") %></a></li>
+          <li><a href="#faq"><%= __("nav.faq") %></a></li>
+          <li><a href="#contact"><%= __("nav.contact") %></a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+  
+
+  <section class="hero">
+    <h1><%= __("title") %></h1>
+  </section>
+  
+  <section id="about" class="about-section">
+    <div class="left-block">
+      <h2><%= __("about.title") %></h2>
+      <p><%= __("about.content") %></p>
+    </div>
+    <div class="right-block">
+      <img src="/images/about.jpg" alt="Imagen descriptiva" />
+    </div>
+  </section>
+
+  <section id="nuestrosGatos" class="gatos-section">
+    <div class="left-block">
+      <img src="/images/our_cats.jpg" alt="Imagen de gatos" />
+    </div>
+    <div class="right-block">
+      <h2><%= __("our_cats.title") %></h2>
+      <p><%= __("our_cats.content") %></p>
+    </div>
+  </section>
+
+  <section id="gatos" class="cats-section">
+    <h2><%= __("nav.cats") %></h2>
+    <div class="cats-grid">
+      <% gatos.forEach(function(gato, index){ %>
+        <div class="cat-card" data-cat-index="<%= index %>">
+          <img src="<%= gato.imagen %>" alt="<%= gato.nombre %>" />
+          <h3><%= gato.nombre %></h3>
+          <p>Edad: <%= gato.edad %></p>
+          <p>Sexo: <%= gato.sexo %></p>
+        </div>
+      <% }) %>
+    </div>
+  </section>
+  
+  <!-- Modal Información del Gato -->
+  <div id="cat-modal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span class="close-modal cat-close">&times;</span>
+      <img id="modal-cat-img" src="" alt="Gato" />
+      <h3 id="modal-cat-name"></h3>
+      <p id="modal-cat-age"></p>
+      <p id="modal-cat-sex"></p>
+      <p id="modal-cat-desc"></p>
+      <button id="preAdopt-btn">Pre-adoptar</button>
+    </div>
+  </div>
+  
+  <!-- Modal Pre-adopción -->
+  <div id="preadoption-modal" class="modal" style="display:none;">
+    <div class="modal-content">
+      <span class="close-modal preadoption-close">&times;</span>
+      <h3>Formulario de Pre-Adopción</h3>
+      <form action="/submit-preadopcion" method="POST" class="preadopcion-form">
+        <!-- Datos del gato -->
+        <fieldset>
+          <legend>Datos del gato</legend>
+          <label for="gatito">Gatito por el que está interesado (nombre):</label>
+          <input type="text" id="gatito" name="gatito" required>
+
+            <label for="caracter-gatito">¿Qué carácter le gustaría que tuviera el gatito que busca?</label>
+            <textarea id="caracter-gatito" name="caracter_gatito" rows="2"></textarea>
+
+            <label for="joven-o-adulto">¿Adoptaría un gato joven o adulto?</label>
+            <select id="joven-o-adulto" name="joven_o_adulto" required>
+                <option value="joven">Joven</option>
+                <option value="adulto">Adulto</option>
+                <option value="ambos">Ambos</option>
+            </select>
+
+            <label for="crianza-bebe">¿Sabe cómo afrontar la crianza de un gatito bebé? Describa los cuidados:</label>
+            <textarea id="crianza-bebe" name="crianza_bebe" rows="3"></textarea>
+
+            <label for="condiciones-especiales">¿Se plantearía adoptar un gatito con condiciones especiales?</label>
+            <textarea id="condiciones-especiales" name="condiciones_especiales" rows="3"></textarea>
+        </fieldset>
+
+        <!-- Información personal -->
+        <fieldset>
+            <legend>Información Personal</legend>
+            <label for="nombre">Nombre y apellidos:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="dni">DNI:</label>
+            <input type="text" id="dni" name="dni" required>
+
+            <label for="domicilio">Domicilio:</label>
+            <input type="text" id="domicilio" name="domicilio" required>
+
+            <label for="codigo-postal">Código Postal:</label>
+            <input type="text" id="codigo-postal" name="codigo_postal" required>
+
+            <label for="telefono">Teléfono de contacto:</label>
+            <input type="tel" id="telefono" name="telefono" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="profesion">Profesión:</label>
+            <input type="text" id="profesion" name="profesion" required>
+
+            <label for="edad">Edad o fecha de nacimiento:</label>
+            <input type="date" id="edad" name="edad" required>
+
+            <label for="personas-vivienda">Personas en la vivienda (incluye edades si aplica):</label>
+            <textarea id="personas-vivienda" name="personas_vivienda" rows="3"></textarea>
+
+            <label for="familia-acuerdo">¿Están todos de acuerdo con tener un gato? ¿De quién fue la idea?</label>
+            <textarea id="familia-acuerdo" name="familia_acuerdo" rows="2"></textarea>
+
+            <label for="motivo-adopcion">¿Por qué desea adoptar?</label>
+            <textarea id="motivo-adopcion" name="motivo_adopcion" rows="2"></textarea>
+        </fieldset>
+
+        <!-- Información adicional -->
+        <fieldset>
+            <legend>Información Adicional</legend>
+            <label for="otros-animales">¿Tiene otros animales de compañía? Descríbalos:</label>
+            <textarea id="otros-animales" name="otros_animales" rows="3"></textarea>
+
+            <label for="caracter-gato-actual">En caso de tener un gato actual, ¿qué carácter tiene?</label>
+            <textarea id="caracter-gato-actual" name="caracter_gato_actual" rows="2"></textarea>
+
+            <label for="mayor-70">Si tiene más de 70 años, ¿quién se haría cargo del gato en el futuro?</label>
+            <textarea id="mayor-70" name="mayor_70" rows="3"></textarea>
+        </fieldset>
+
+        <!-- Información del hogar -->
+        <fieldset>
+            <legend>Información del Hogar</legend>
+            <label for="tipo-vivienda">Tipo de vivienda (piso, chalet, etc.):</label>
+            <input type="text" id="tipo-vivienda" name="tipo_vivienda" required>
+
+            <label for="metros-vivienda">Metros cuadrados:</label>
+            <input type="number" id="metros-vivienda" name="metros_vivienda">
+
+            <label for="terraza">¿Terraza cerrada o abierta?:</label>
+            <input type="text" id="terraza" name="terraza">
+
+            <label for="proteccion-ventanas">¿Hay protección en las ventanas?</label>
+            <textarea id="proteccion-ventanas" name="proteccion_ventanas" rows="2"></textarea>
+        </fieldset>
+
+        <!-- Experiencia con gatos -->
+        <fieldset>
+            <legend>Experiencia con Gatos</legend>
+            <label for="experiencia">¿Has tenido gatos antes? Cuéntanos tu experiencia:</label>
+            <textarea id="experiencia" name="experiencia" rows="4"></textarea>
+
+            <label for="inconvenientes">Inconvenientes que ves en tener un gato:</label>
+            <textarea id="inconvenientes" name="inconvenientes" rows="3"></textarea>
+
+            <label for="ventajas">Ventajas que ves en adoptar un gato:</label>
+            <textarea id="ventajas" name="ventajas" rows="3"></textarea>
+        </fieldset>
+
+        <!-- Contacto -->
+        <fieldset>
+            <legend>Contacto</legend>
+            <label for="como-conociste">¿Cómo nos conociste? (Instagram, Facebook, amistades, otros):</label>
+            <textarea id="como-conociste" name="como_conociste" rows="2"></textarea>
+        </fieldset>
+
+        <!-- Botón de envío -->
+        <div class="form-actions">
+            <button type="submit" class="submit-btn">Enviar Solicitud</button>
+        </div>
+    </form>
+    </div>
+  </div>
+
+  <section id="faq" class="faq-section">
+    <h2><%= __("faq.title") %></h2>
+    <div class="faq-item">
+      <h3><%= __("faq.q1") %></h3>
+      <p><%= __("faq.a1") %></p>
+    </div>
+    <div class="faq-item">
+      <h3><%= __("faq.q1") %></h3>
+      <p><%= __("faq.a1") %></p>
+    </div>
+    <div class="faq-item">
+      <h3><%= __("faq.q1") %></h3>
+      <p><%= __("faq.a1") %></p>
+    </div>
+    <div class="faq-item">
+      <h3><%= __("faq.q1") %></h3>
+      <p><%= __("faq.a1") %></p>
+    </div>
+    <div class="faq-item">
+      <h3><%= __("faq.q1") %></h3>
+      <p><%= __("faq.a1") %></p>
+    </div>
+    <div class="faq-item">
+      <h3><%= __("faq.q1") %></h3>
+      <p><%= __("faq.a1") %></p>
+    </div>
+    <div class="faq-item">
+      <h3><%= __("faq.q1") %></h3>
+      <p><%= __("faq.a1") %></p>
+    </div>
+    <div class="faq-item">
+      <h3><%= __("faq.q1") %></h3>
+      <p><%= __("faq.a1") %></p>
+    </div>
+    
+  </section>
+
+  <section id="how-to-help" class="help-section">
+    <h2>Cómo Ayudar</h2>
+    <div class="tabs-container">
+      <!-- Navegación de pestañas -->
+      <ul class="tabs-nav">
+        <li class="active" data-tab="donaciones">Donaciones</li>
+        <li data-tab="afiliados">Afiliados</li>
+        <li data-tab="socios">Socios</li>
+        <li data-tab="voluntarios">Voluntarios</li>
+      </ul>
+  
+      <!-- Contenido de las pestañas -->
+      <div class="tabs-content">
+        <!-- Donaciones -->
+        <div class="tab-panel active" id="donaciones">
+          <h3>Donaciones</h3>
+          <p>Tu donación nos ayuda a cubrir los gastos de alimentos, medicamentos, esterilizaciones y todo lo necesario para cuidar de nuestros gatos rescatados.</p>
+          <button onclick="window.location.href='/donar'" class="action-btn">Haz una Donación</button>
+        </div>
+  
+        <!-- Afiliados -->
+        <div class="tab-panel" id="afiliados">
+          <h3>Afiliados</h3>
+          <p>Conviértete en un afiliado y ayuda a promover nuestras actividades. Cada afiliación representa un apoyo directo para continuar nuestro trabajo.</p>
+          <button onclick="window.location.href='/afiliarse'" class="action-btn">Afíliate Ahora</button>
+        </div>
+  
+        <!-- Socios -->
+        <div class="tab-panel" id="socios">
+          <h3>Socios</h3>
+          <p>Al convertirte en socio, contribuyes mensualmente a nuestras actividades, garantizando un ingreso constante para el cuidado de nuestros gatos.</p>
+          <button onclick="window.location.href='/hacer-socio'" class="action-btn">Hazte Socio</button>
+        </div>
+  
+        <!-- Voluntarios -->
+        <div class="tab-panel" id="voluntarios">
+          <h3>Voluntarios</h3>
+          <p>Únete como voluntario y participa activamente en el rescate, cuidado y adopción de gatos. ¡Tu tiempo marca la diferencia!</p>
+          <button onclick="window.location.href='/voluntariado'" class="action-btn">Únete como Voluntario</button>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+
+  <section class="contact-section">
+    <div class="content-block">
+      <h2>Contacta con Ayuba</h2>
+      <p>Si tienes alguna pregunta o necesitas más información, rellena el formulario y te responderemos lo antes posible.</p>
+    </div>
+    <div class="form-block">
+      <form id="contact-form" action="/enviar-contacto" method="POST" novalidate>
+        <div class="form-group">
+          <label>Nombre
+            <input type="text" name="name" required minlength="2" />
+          </label>
+          <small class="error-message">El nombre es requerido.</small>
+        </div>
+        <div class="form-group">
+          <label>Email
+            <input type="email" name="email" required />
+          </label>
+          <small class="error-message">Ingresa un email válido.</small>
+        </div>
+        <div class="form-group">
+          <label>Mensaje
+            <textarea name="message" required minlength="10"></textarea>
+          </label>
+          <small class="error-message">Tu mensaje debe tener al menos 10 caracteres.</small>
+        </div>
+        <button type="submit">Enviar</button>
+        <div class="form-feedback" style="display:none;"></div>
+      </form>
+    </div>
+  </section>
+       
+  <footer>
+    <div class="social-links">
+      <p><%= __("footer.follow") %></p>
+      <a href="https://facebook.com" target="_blank">Facebook</a>
+      <a href="https://instagram.com" target="_blank">Instagram</a>
+      <a href="https://twitter.com" target="_blank">Twitter</a>
+    </div>
+  </footer>
+
+  <script>
+    window.gatos = <%- JSON.stringify(gatos) %>;
+  </script>
+  <script src="/js/main.js"></script>
+</body>
+</html>

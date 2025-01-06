@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&display=swap');
+@import 'variables';
+@import 'mixins';
+
+
+
+h1{
+  font-family: 'Amatic SC', cursive;
+  color: #fff; // Letras blancas
+  font-size: 14rem; // Tamaño grande para destacar
+  line-height: 1.2; // Ajusta el espaciado entre líneas
+} 
+
+h2, h3 {
+  font-family: 'Amatic SC', cursive;
+  color: black;
+  line-height: 1.2; // Ajusta la altura de línea para legibilidad
+  margin: 0 0 20px; // Espaciado inferior estándar
+} 
+
+
+
+
+// Clases comunes
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 $spacing-md;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .button {
+    @include button-style($primary-color, $secondary-color);
+  }
+  

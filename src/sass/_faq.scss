@@ -1,0 +1,47 @@
+@import 'variables';
+@import 'mixins';
+
+.faq-section {
+    width: 100%; // Ocupa todo el ancho
+    padding: 4rem 2rem; // Espaciado interno para separación
+    background-color: $light-background; // Fondo claro (ajusta según tu diseño)
+    color: $text-color; // Color del texto principal
+    font-family: $font-family-base;
+  
+    h2 {
+      font-size: 2.5rem; // Tamaño destacado para el título
+      font-family: $font-family-headings; // Fuente para encabezados
+      text-align: center; // Centrado
+      margin-bottom: 2rem; // Separación con los items FAQ
+      color: $primary-color; // Color principal
+    }
+  
+    .faq-item {
+      margin-bottom: 2rem; // Separación entre cada FAQ
+      padding: 1.5rem;
+      border: 1px solid $border-color; // Borde alrededor del FAQ
+      border-radius: 0.5rem; // Bordes redondeados
+      background-color: $light-color; // Fondo claro del FAQ
+  
+      h3 {
+        font-size: 1.5rem; // Tamaño destacado para las preguntas
+        font-family: $font-family-headings;
+        color: $secondary-color; // Color secundario
+        margin-bottom: 0.5rem; // Espaciado con la respuesta
+        cursor: pointer; // Cambiar a cursor de puntero para interacción
+        transition: color 0.3s ease; // Transición suave para hover
+  
+        &:hover {
+          color: darken($secondary-color, 10%); // Oscurece el color al pasar el ratón
+        }
+      }
+  
+      p {
+        font-size: 1rem; // Tamaño base para el texto
+        color: $text-color; // Color estándar
+        line-height: 1.6; // Espaciado entre líneas
+        margin: 0;
+      }
+    }
+  }
+  

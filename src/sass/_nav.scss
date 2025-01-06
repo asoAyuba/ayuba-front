@@ -1,0 +1,56 @@
+@import 'variables'; // Asegúrate de importar tus variables globales
+
+.top-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  background-color: $primary-color; // Fondo del navbar
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: $spacing-sm 0;
+
+  .nav-container {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between; // Distribuye elementos a izquierda y derecha
+    align-items: center;
+
+    .nav-logo {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-decoration: none;
+      padding: $spacing-sm $spacing-md;
+      transition: background-color 0.3s ease;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: $spacing-md; // Espaciado entre enlaces
+      margin: 0;
+      padding: 0;
+      right: -10%;
+      li {
+        a {
+          display: block; // Para que el hover ocupe todo el alto del navbar
+          color: #fff;
+          text-decoration: none;
+          font-size: 1rem;
+          font-weight: bold;
+          padding: $spacing-sm $spacing-md;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: darken($primary-color, 10%);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,61 @@
+{
+	"title": "Ayuba Cat Rescue",
+	"nav": {
+		"cats": "Cats for Adoption",
+		"about": "About Us",
+		"faq": "FAQ",
+		"contact": "Contact",
+		"preAdoption": "Pre-Adoption"
+	},
+	"hero": {
+		"headline": "Find a loving home for our cats",
+		"ctaDonate": "Donate Now",
+		"ctaAffiliate": "Check our affiliates"
+	},
+	"about": {
+		"title": "About Us",
+		"content": "We are a non-profit organization dedicated to rescuing cats in need and finding them a loving home."
+	},
+	"faq": {
+		"title": "Frequently Asked Questions",
+		"q1": "How can I adopt a cat?",
+		"a1": "Just fill in the pre-adoption form and we'll get in touch."
+	},
+	"contact": {
+		"title": "Contact",
+		"name": "Name",
+		"email": "Email",
+		"message": "Message",
+		"submit": "Send"
+	},
+	"preAdoption": {
+		"title": "Pre-Adoption Form",
+		"instructions": "Fill this form and we will contact you soon.",
+		"submit": "Send Request"
+	},
+	"footer": {
+		"follow": "Follow us on social media"
+	},
+	"hero.headline": "hero.headline",
+	"nav.cats": "nav.cats",
+	"nav.about": "nav.about",
+	"nav.faq": "nav.faq",
+	"nav.contact": "nav.contact",
+	"nav.preAdoption": "nav.preAdoption",
+	"hero.ctaDonate": "hero.ctaDonate",
+	"hero.ctaAffiliate": "hero.ctaAffiliate",
+	"about.title": "about.title",
+	"about.content": "about.content",
+	"faq.title": "faq.title",
+	"faq.q1": "faq.q1",
+	"faq.a1": "faq.a1",
+	"contact.title": "contact.title",
+	"contact.name": "contact.name",
+	"contact.email": "contact.email",
+	"contact.message": "contact.message",
+	"contact.submit": "contact.submit",
+	"preAdoption.title": "preAdoption.title",
+	"preAdoption.instructions": "preAdoption.instructions",
+	"preAdoption.submit": "preAdoption.submit",
+	"footer.follow": "footer.follow"
+}

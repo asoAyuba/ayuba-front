@@ -1,0 +1,42 @@
+{
+	"title": "AYUBA",
+	"nav": {
+		"cats": "Adopciones",
+		"ourCats": "Nuestros Gatos",
+		"about": "Quiénes somos",
+		"faq": "Preguntas Frecuentes",
+		"contact": "Contacto",
+		"preAdoption": "Pre-adopción"
+	},
+	"about": {
+		"title": "Quiénes somos",
+		"content": "Somos una organización sin ánimo de lucro..."
+	},
+	"our_cats":{
+		"title": "Nuestros gatos",
+		"content": "Somos una organización sin ánimo de lucro..."
+	},
+	"faq": {
+		"title": "Preguntas Frecuentes",
+		"q1": "¿Cómo puedo adoptar un gato?",
+		"a1": "Simplemente rellena el formulario..."
+	},
+	"contact": {
+		"title": "Contacto",
+		"name": "Nombre",
+		"email": "Email",
+		"message": "Mensaje",
+		"submit": "Enviar"
+	},
+	"preAdoption": {
+		"title": "Formulario de Pre-Adopción",
+		"instructions": "Completa este formulario...",
+		"submit": "Enviar Solicitud"
+	},
+	"footer": {
+		"follow": "Síguenos en redes sociales"
+	},
+	"hero": {
+		"headline": "hero.headline"
+	}
+}

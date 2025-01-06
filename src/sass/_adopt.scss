@@ -1,0 +1,177 @@
+@import 'variables';
+@import 'mixins';
+
+.cats-section {
+  width: 100%; // Sección ocupa todo el ancho
+  padding: 2rem;
+  background-color: $background-light; // Fondo claro para la sección
+
+  h2 {
+    font-family: $font-family-headings; // Fuente de los títulos
+    font-size: 2.5rem;
+    color: $primary-color; // Color principal
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+
+  .cats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); // Diseño responsivo
+    gap: 2rem;
+
+    .cat-card {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 1rem;
+      border: 1px solid $border-color; // Borde de las tarjetas
+      border-radius: 0.5rem; // Bordes redondeados
+      background-color: $light-color; // Fondo blanco
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); // Sombra ligera
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+
+      &:hover {
+        transform: scale(1.05); // Efecto de escala al pasar el ratón
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+      }
+
+      img {
+        width: 100%; // Imagen ocupa el ancho de la tarjeta
+        border-radius: 0.5rem; // Bordes redondeados
+        margin-bottom: 1rem;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+        font-family: $font-family-headings;
+        color: $text-color;
+        margin-bottom: 0.5rem;
+      }
+
+      p {
+        font-family: $font-family-base;
+        font-size: 1rem;
+        color: $text-color;
+        margin: 0.5rem 0;
+      }
+    }
+  }
+}
+
+.modal {
+  display: none; // Oculto por defecto
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); // Velo oscuro
+  z-index: 1000; // Asegura que el modal esté sobre otros elementos
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .modal-content {
+    background-color: $light-color; // Fondo blanco
+    border-radius: 0.5rem; // Bordes redondeados
+    padding: 2rem;
+    max-width: 600px;
+    max-height: 80%; // Limita la altura para mostrar el contenido visible
+    width: 90%;
+    position: relative;
+    text-align: left;
+    overflow-y: auto; // Habilita el scroll vertical si el contenido es demasiado largo
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); // Sombra para el modal
+
+    .close-modal {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: $text-color;
+    }
+
+    h3 {
+      font-family: $font-family-headings;
+      font-size: 2rem;
+      color: $primary-color;
+      margin-bottom: 1rem;
+    }
+
+    label {
+      display: flex;
+      flex-direction: column;
+      font-family: $font-family-base;
+      font-size: 1rem;
+      color: $text-color;
+
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding: 0.75rem;
+        font-family: $font-family-base;
+        font-size: 1rem;
+        border: 1px solid $border-color;
+        border-radius: 0.5rem;
+        outline: none;
+
+        &:focus {
+          border-color: $primary-color;
+          box-shadow: 0 0 5px rgba($primary-color, 0.5);
+        }
+      }
+
+      textarea {
+        resize: vertical;
+        height: 5rem;
+      }
+
+      select {
+        cursor: pointer;
+      }
+    }
+
+    .submit-btn {
+      align-self: flex-start;
+      padding: 0.75rem 2rem;
+      background-color: $primary-color;
+      color: $light-color;
+      border: none;
+      border-radius: 0.5rem;
+      cursor: pointer;
+      font-family: $font-family-headings;
+      font-size: 1rem;
+
+      &:hover {
+        background-color: darken($primary-color, 10%);
+      }
+    }
+  }
+}
+
+button#preAdopt-btn {
+  display: inline-block;
+  font-family: $font-family-headings;
+  font-size: 1rem;
+  padding: 0.75rem 2rem;
+  background-color: $primary-color;
+  color: $light-color;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+
+  &:hover {
+    background-color: darken($primary-color, 10%);
+    transform: scale(1.05);
+  }
+
+  &:active {
+    transform: scale(0.95);
+  }
+}
+

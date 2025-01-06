@@ -1,0 +1,37 @@
+@import 'variables';
+@import 'mixins';
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh; // Ocupa toda la altura de la pantalla
+  background-image: url('/images/header.jpg'); // Cambia esto por tu imagen
+  background-size: cover; // Escala la imagen para cubrir toda la sección
+  background-position: center; // Centra la imagen
+  background-repeat: no-repeat;
+
+  // Velo sobre la imagen
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); // Color negro con opacidad
+    z-index: 1;
+  }
+
+  // Contenedor del texto
+  display: flex;
+  justify-content: center; // Centra horizontalmente
+  align-items: center; // Centra verticalmente
+  text-align: center; // Asegura el centrado del texto
+
+  h1 {
+    position: relative; // Asegura que el texto esté encima del velo
+    z-index: 2;
+    margin: 0;
+    padding: 0 20px; // Margen interno para no pegar el texto a los bordes
+  }
+}

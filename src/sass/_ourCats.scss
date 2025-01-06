@@ -1,0 +1,46 @@
+@import 'variables';
+@import 'mixins';
+
+.gatos-section {
+  display: flex;
+  width: 100%; // Asegura el ancho completo
+  height: 100vh; // Altura completa de la pantalla
+  overflow: hidden; // Evita desbordamientos
+  margin-top: 1rem; // Espaciado entre esta sección y la anterior
+
+  .left-block,
+  .right-block {
+    flex: 1; // Cada bloque ocupa el 50% del ancho disponible
+    display: flex;
+    justify-content: center; // Centra el contenido horizontalmente
+    align-items: center; // Centra el contenido verticalmente
+  }
+
+  .left-block {
+    img {
+      max-width: 100%; // Escala la imagen proporcionalmente al ancho
+      height: auto; // Mantiene las proporciones
+      border-radius: $border-radius; // Opcional: bordes redondeados
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); // Opcional: sombra
+    }
+  }
+
+  .right-block {
+    flex-direction: column; // Alinea los elementos verticalmente
+    padding: 2rem; // Ajusta el espaciado interno
+
+    h2 {
+      font-family: $font-family-headings; // Fuente del título
+      font-size: 2.5rem;
+      color: $primary-color; // Color del título
+      margin-bottom: 1rem; // Espaciado inferior
+    }
+
+    p {
+      font-family: $font-family-base; // Fuente del texto base
+      font-size: 1.2rem;
+      line-height: 1.6;
+      color: $text-color; // Color del texto
+    }
+  }
+}

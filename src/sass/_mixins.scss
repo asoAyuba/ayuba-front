@@ -1,0 +1,14 @@
+// Mixins
+@mixin button-style($bg-color, $hover-color) {
+    background-color: $bg-color;
+    color: #fff;
+    padding: $spacing-sm $spacing-lg;
+    border-radius: $border-radius;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+  
+    &:hover {
+      background-color: $hover-color;
+    }
+  }
+  

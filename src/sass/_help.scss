@@ -1,0 +1,99 @@
+@import 'variables';
+@import 'common';
+
+.help-section {
+  width: 100%; // Ocupa todo el ancho de la pantalla
+  height: 50vh; // Ocupa el 50% de la altura de la pantalla
+  display: flex;
+  flex-direction: column; // Los elementos se apilan verticalmente
+  justify-content: center; // Centra el contenido verticalmente
+  padding: 2rem;
+  background-color: $background-light; // Fondo claro
+  text-align: center;
+
+  h2 {
+    font-family: $font-family-headings; // Fuente del título
+    font-size: 2.5rem; // Tamaño del título
+    color: $primary-color; // Color principal
+    margin-bottom: 2rem;
+  }
+
+  .tabs-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    .tabs-nav {
+      display: flex; // Navegación en una fila
+      justify-content: center;
+      gap: 1rem; // Espaciado entre pestañas
+      margin-bottom: 2rem;
+
+      li {
+        font-family: $font-family-base; // Fuente base
+        font-size: 1.2rem;
+        color: $text-color; // Color del texto
+        padding: 0.5rem 1rem; // Espaciado interno
+        border: 1px solid $border-color; // Borde
+        border-radius: 0.5rem; // Bordes redondeados
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &.active {
+          background-color: $primary-color; // Fondo para la pestaña activa
+          color: $light-color; // Texto blanco
+        }
+
+        &:hover {
+          background-color: lighten($primary-color, 20%); // Fondo más claro al pasar el ratón
+        }
+      }
+    }
+
+    .tabs-content {
+      width: 100%; // Ocupa todo el ancho de la sección
+
+      .tab-panel {
+        display: none; // Oculto por defecto
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+
+        &.active {
+          display: flex; // Muestra solo la pestaña activa
+        }
+
+        h3 {
+          font-family: $font-family-headings; // Fuente del subtítulo
+          font-size: 2rem;
+          color: $text-color; // Color del texto
+          margin-bottom: 1rem;
+        }
+
+        p {
+          font-family: $font-family-base; // Fuente base
+          font-size: 1.2rem;
+          color: $text-color; // Color del texto
+          margin-bottom: 1.5rem;
+          line-height: 1.6; // Espaciado entre líneas
+        }
+
+        .action-btn {
+          font-family: $font-family-headings; // Fuente del botón
+          font-size: 1.2rem;
+          color: $light-color; // Texto blanco
+          background-color: $primary-color; // Fondo del botón
+          border: none;
+          border-radius: 0.5rem; // Bordes redondeados
+          padding: 0.75rem 2rem; // Espaciado interno
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+
+          &:hover {
+            background-color: darken($primary-color, 10%); // Oscurece el fondo al pasar el ratón
+          }
+        }
+      }
+    }
+  }
+}

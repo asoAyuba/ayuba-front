@@ -1,0 +1,31 @@
+@import 'reset';
+@import 'variables';
+@import 'common';
+@import 'mixins';
+
+@import 'nav';
+@import 'header';
+@import 'about';
+@import 'ourCats';
+@import 'adopt';
+@import 'preadopt';
+@import 'help';
+@import 'contact';
+@import 'footer';
+@import 'faq';
+
+
+
+
+
+
+@media (max-width: 768px) {
+  .top-nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .cats-grid {
+    grid-template-columns: 1fr;
+  }
+}
+

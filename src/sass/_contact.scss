@@ -1,0 +1,106 @@
+@import 'variables';
+@import 'mixins';
+
+.contact-section {
+  display: flex; // Crea dos columnas
+  width: 100%; // Ocupa todo el ancho de la pantalla
+  height: 100vh; // Altura completa de la pantalla
+  padding: 2rem; // Espaciado interno
+  background-color: $background-light; // Fondo claro (opcional)
+
+  .content-block,
+  .form-block {
+    flex: 1; // Cada bloque ocupa el 50% del ancho
+    display: flex;
+    flex-direction: column;
+    justify-content: center; // Centra el contenido verticalmente
+    padding: 2rem;
+  }
+
+  .content-block {
+    h2 {
+      font-size: 2.5rem;
+      color: $primary-color; // Color principal
+      margin-bottom: 1rem; // Espaciado inferior
+    }
+
+    p {
+      font-family: $font-family-base; // Fuente base
+      font-size: 1.2rem;
+      color: $text-color; // Color del texto
+      line-height: 1.6;
+    }
+  }
+
+  .form-block {
+    form {
+      width: 100%; // Ocupa el ancho completo del bloque
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem; // Espaciado entre los elementos del formulario
+
+      .form-group {
+        display: flex;
+        flex-direction: column;
+
+        label {
+          font-family: $font-family-base; // Fuente base
+          font-size: 1rem;
+          color: $text-color; // Color del texto
+          margin-bottom: 0.5rem; // Espaciado inferior
+
+          input,
+          textarea {
+            width: 100%; // Ocupa el ancho completo
+            padding: 0.75rem; // Espaciado interno
+            font-family: $font-family-base; // Fuente base
+            font-size: 1rem;
+            border: 1px solid $border-color; // Borde del input
+            border-radius: 0.5rem; // Bordes redondeados
+            outline: none;
+
+            &:focus {
+              border-color: $primary-color; // Cambia el color del borde al enfocar
+              box-shadow: 0 0 5px rgba($primary-color, 0.5); // Efecto de foco
+            }
+          }
+
+          textarea {
+            resize: vertical; // Permite cambiar el tamaño verticalmente
+            height: 5rem; // Altura predeterminada
+          }
+        }
+
+        .error-message {
+          font-size: 0.9rem; // Tamaño de letra más pequeño
+          color: $error-color; // Rojo para los mensajes de error
+          margin-top: 0.5rem; // Espaciado superior
+          display: none; // Oculto por defecto
+        }
+      }
+
+      button {
+        align-self: flex-start; // Alinea el botón a la izquierda
+        padding: 0.75rem 2rem; // Espaciado interno
+        font-family: $font-family-headings; // Fuente del botón
+        font-size: 1rem;
+        color: $light-color; // Texto blanco
+        background-color: $primary-color; // Color principal
+        border: none;
+        border-radius: 0.5rem; // Bordes redondeados
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: darken($primary-color, 10%); // Oscurece el color al pasar el ratón
+        }
+      }
+
+      .form-feedback {
+        font-size: 1rem;
+        color: $success-color; // Verde para los mensajes de éxito
+        margin-top: 1rem;
+      }
+    }
+  }
+}

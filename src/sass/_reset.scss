@@ -1,0 +1,73 @@
+/* _reset.scss */
+
+/* Elimina márgenes, padding y bordes por defecto */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Ajuste para mejorar la legibilidad en tipografía */
+html {
+    font-family: sans-serif;
+    line-height: 1.5;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    scroll-behavior: smooth;
+}
+
+/* Remueve estilos por defecto en body */
+body {
+    margin: 0;
+    font-size: 100%;
+    background-color: #fff;
+    color: #333;
+}
+
+/* Elimina subrayado de enlaces y mantiene el color por defecto */
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* Establece un ancho del 100% para imágenes y videos */
+img,
+video {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Elimina bullets y padding de listas */
+ul,
+ol {
+    list-style: none;
+}
+
+/* Restablece estilos para botones */
+button {
+    background: none;
+    border: none;
+    cursor: pointer;
+}
+
+/* Elimina bordes y espaciado de tablas */
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* Ajuste para inputs y textarea */
+input,
+textarea {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+/* Elimina estilos por defecto para strong y bold */
+strong,
+b {
+    font-weight: bold;
+}

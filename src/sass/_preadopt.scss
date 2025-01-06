@@ -1,0 +1,72 @@
+@import 'variables';
+@import 'mixins';
+
+.preadopt-form {
+  padding: $spacing-lg;
+  background-color: $background-color;
+
+  h2 {
+    text-align: center;
+    margin-bottom: $spacing-md;
+    color: $primary-color;
+    font-size: 2rem;
+  }
+
+  .preadopt-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: $spacing-lg;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: $border-radius;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+
+    fieldset {
+      border: 1px solid $secondary-color;
+      padding: $spacing-md;
+      border-radius: $border-radius;
+      margin-bottom: $spacing-md;
+
+      legend {
+        font-size: 1.2rem;
+        color: $primary-color;
+        font-weight: bold;
+      }
+
+      label {
+        display: block;
+        margin-bottom: $spacing-sm;
+        font-size: 1rem;
+        color: $text-color;
+      }
+
+      input,
+      textarea,
+      select {
+        width: 100%;
+        padding: $spacing-sm;
+        border: 1px solid #ddd;
+        border-radius: $border-radius;
+        font-size: 1rem;
+        margin-bottom: $spacing-md;
+      }
+
+      textarea {
+        resize: vertical;
+      }
+
+      select {
+        cursor: pointer;
+      }
+    }
+
+    .form-actions {
+      text-align: center;
+
+      .submit-btn {
+        @include button-style($primary-color, $secondary-color);
+        padding: $spacing-sm $spacing-lg;
+      }
+    }
+  }
+}
